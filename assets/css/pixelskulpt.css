@@ -1,0 +1,280 @@
+@font-face {
+  font-family: 'Palatino LT Std';
+  src: url("../../fonts/PalatinoLTStd-Medium.eot");
+  src: url("../../fonts/PalatinoLTStd-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/PalatinoLTStd-Medium.woff2") format("woff2"), url("../../fonts/PalatinoLTStd-Medium.woff") format("woff"), url("../../fonts/PalatinoLTStd-Medium.ttf") format("truetype"), url("../../fonts/PalatinoLTStd-Medium.svg#PalatinoLTStd-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+#carouselDIV * {
+  font-family: "Futura Std";
+  font-size: 4vw;
+}
+
+@media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
+  #carouselDIV * {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
+  #carouselDIV * {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  #carouselDIV * {
+    font-size: 4vw;
+  }
+}
+
+#socialDIV *, #privacyDIV *, #callDIV * {
+  font-family: "Futura Std";
+  font-size: 1vw;
+}
+
+@media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
+  #socialDIV *, #privacyDIV *, #callDIV * {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
+  #socialDIV *, #privacyDIV *, #callDIV * {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  #socialDIV *, #privacyDIV *, #callDIV * {
+    font-size: 4vw;
+  }
+}
+
+#bulletDIV p, #titleDIV * {
+  font-family: "Futura Std";
+  font-size: 2vw;
+  margin-top: 0;
+}
+
+@media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
+  #bulletDIV p, #titleDIV * {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
+  #bulletDIV p, #titleDIV * {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  #bulletDIV p, #titleDIV * {
+    font-size: 4vw;
+  }
+}
+
+h1, h2, h3, p {
+  color: #ffffff;
+  font-weight: normal;
+  margin: 0;
+}
+
+.bianco {
+  color: #ffffff !important;
+}
+
+.blu {
+  color: #150578 !important;
+}
+
+.blu2 {
+  color: #1844AB !important;
+}
+
+.blu3 {
+  color: #6287DE !important;
+}
+
+a:link, a:visited, a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 0.4 s;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#gridHome {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-areas: "logo . . . . title title . . . . menu" ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . text text text text text text text text . social" ". . text text text text text text text text . social" ". . text text text text text text text text . social" "privacy . . . . call call . . . . ." "privacy . . . . . . . . . . ." "bullet bullet bullet . . . . . . . . .";
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  padding: 20px;
+  background: #6287de;
+  background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%);
+  background: radial-gradient(ellipse at center, #6287de 0%, #150578 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 );
+}
+
+#logoDIV {
+  grid-area: logo;
+}
+
+#titleDIV {
+  grid-area: title;
+  display: inline-flex;
+}
+
+#titleDIV * {
+  margin: 0 auto auto;
+  border-bottom: 2px solid;
+}
+
+#menuDIV {
+  grid-area: menu;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#burger {
+  width: 40%;
+}
+
+#slice1 {
+  height: 2px;
+  background-color: white;
+  width: 100%;
+}
+
+#slice2 {
+  height: 2px;
+  background-color: white;
+  width: 50%;
+  margin-top: 10px;
+  float: right;
+}
+
+#carouselDIV {
+  grid-area: text;
+  text-align: center;
+}
+
+#socialDIV {
+  grid-area: social;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#socialDIV > div {
+  writing-mode: tb-rl;
+}
+
+#socialDIV p {
+  display: inline-block;
+  float: right;
+}
+
+.icon {
+  fill: white;
+  height: 8%;
+  margin-bottom: 16%;
+}
+
+#callDIV {
+  grid-area: call;
+  display: flex;
+  justify-content: center;
+}
+
+#privacyDIV {
+  grid-area: privacy;
+}
+
+#privacyDIV > * {
+  transform: rotate(180deg);
+  writing-mode: tb-rl;
+  display: inline-block;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#bulletDIV {
+  grid-area: bullet;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bulletContainer {
+  flex-grow: 1;
+}
+
+.bulletLine {
+  height: 2px;
+  background-color: white;
+  width: 100%;
+}
+
+#bulletLine1 {
+  background-color: #ffffff;
+}
+
+#bulletLine2 {
+  background-color: #6287DE;
+}
+
+#bulletLine3 {
+  background-color: #1844AB;
+}
+
+#navDIV {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 8vw;
+  width: 16vw;
+  display: flex;
+}
+
+#prevDIV {
+  display: inline-flex;
+  height: 100%;
+  width: 50%;
+  background-color: #6287DE;
+}
+
+#nextDIV {
+  display: inline-flex;
+  height: 100%;
+  width: 50%;
+  background-color: #1844AB;
+}
+
+#prevArrow {
+  border-left: solid white 2px;
+  border-bottom: solid white 2px;
+  height: 25%;
+  width: 25%;
+  margin: auto;
+  transform: rotate(45deg);
+}
+
+#nextArrow {
+  border-left: solid white 2px;
+  border-bottom: solid white 2px;
+  height: 25%;
+  width: 25%;
+  margin: auto;
+  transform: rotate(225deg);
+}

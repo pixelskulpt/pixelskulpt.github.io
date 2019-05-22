@@ -1,0 +1,241 @@
+@import font-face.sass
+@import variables.sass
+
+// --- --- Typography --- ---
+
+// Testo slider
+#carouselDIV *
+  font-family: nth($h1, 5)
+  font-size: nth($h1, 1)
+  @media #{$portrait}
+    font-size: nth($h1, 4)
+  @media #{$landscape}
+    font-size: nth($h1, 3)
+  @media #{$tablet}
+    font-size: nth($h1, 2)
+
+// h2
+#socialDIV *, #privacyDIV *, #callDIV *
+  font-family: nth($h2, 5)
+  font-size: nth($h2, 1)
+  @media #{$portrait}
+    font-size: nth($h2, 4)
+  @media #{$landscape}
+    font-size: nth($h2, 3)
+  @media #{$tablet}
+    font-size: nth($h2, 2)
+
+// h3
+#bulletDIV p, #titleDIV *
+  font-family: nth($h3, 5)
+  font-size: nth($h3, 1)
+  @media #{$portrait}
+    font-size: nth($h3, 4)
+  @media #{$landscape}
+    font-size: nth($h3, 3)
+  @media #{$tablet}
+    font-size: nth($h3, 2)
+  margin-top: 0
+
+// --- Typography colorz ---
+
+// Main
+
+h1, h2, h3, p
+  color: $bianco
+  font-weight: normal
+  margin: 0
+
+#div
+  h1, h2, h3, p
+    // color: $rosso
+
+
+// <span> classes
+
+.bianco
+  color: $bianco !important
+
+.blu
+  color: $blu1 !important
+
+.blu2
+  color: $blu2 !important
+
+.blu3
+  color: $blu3 !important
+
+
+// --- Links ---
+
+a:link, a:visited, a:active
+  color: $bianco
+  text-decoration: none
+
+
+a:hover
+  transition: 0.4 s
+
+
+// layout (margin, padding, width, height, color, background-color, ...)
+
+html, body
+  margin: 0!important
+  padding:0!important
+
+// --- --- Home --- ---
+
+#gridHome
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-template-rows:  repeat(9, 1fr)
+  grid-template-areas: "logo . . . . title title . . . . menu" ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . text text text text text text text text . social" ". . text text text text text text text text . social" ". . text text text text text text text text . social" "privacy . . . . call call . . . . ." "privacy . . . . . . . . . . ." "bullet bullet bullet . . . . . . . . ."
+  //height: 100%
+  //width: 100%
+
+  height: calc(100vh - 40px)
+  width: calc(100vw - 40px)
+  padding: 20px
+  background: #6287de /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%) /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%,#150578 100%) /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #6287de 0%,#150578 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+
+#logoDIV
+  grid-area: logo
+
+// Title section
+
+#titleDIV
+  grid-area: title
+  display: inline-flex
+
+#titleDIV *
+  margin: 0 auto auto
+  border-bottom: 2px solid
+
+// Menu section
+
+#menuDIV
+  grid-area: menu
+  display: flex
+  justify-content: flex-end
+
+#burger
+  width: 40%
+
+#slice1
+  height: 2px
+  background-color: white
+  width: 100%
+
+#slice2
+  height: 2px
+  background-color: white
+  width: 50%
+  margin-top: 10px
+  float: right
+
+#carouselDIV
+  grid-area: text
+  text-align: center
+
+// Social section
+
+#socialDIV
+  grid-area: social
+  display: flex
+  justify-content: flex-end
+
+#socialDIV > div
+  writing-mode: tb-rl
+
+#socialDIV p
+  display: inline-block
+  float: right
+
+.icon
+  fill: white
+  height: 8%
+  margin-bottom: 16%
+
+#callDIV
+  grid-area: call
+  display: flex
+  justify-content: center
+
+// Privacy / language section
+
+#privacyDIV
+  grid-area: privacy
+
+#privacyDIV > *
+  transform: rotate(180deg)
+  writing-mode: tb-rl
+  display: inline-block
+  height: 100%
+  display: flex
+  justify-content: space-between
+
+// Bullet section
+
+#bulletDIV
+  grid-area: bullet
+  display: flex
+  align-items: flex-end
+
+.bulletContainer
+  flex-grow: 1
+
+.bulletLine
+  height: 2px
+  background-color: white
+  width: 100%
+
+#bulletLine1
+  background-color: $bianco
+
+#bulletLine2
+  background-color: $blu3
+
+#bulletLine3
+  background-color: $blu2
+
+// Arrow section
+
+#navDIV
+  position: fixed
+  bottom: 0
+  right: 0
+  height: 8vw
+  width: 16vw
+  display: flex
+
+#prevDIV
+  display: inline-flex
+  height: 100%
+  width: 50%
+  background-color: $blu3
+
+#nextDIV
+  display: inline-flex
+  height: 100%
+  width: 50%
+  background-color: $blu2
+
+#prevArrow
+  border-left: solid white 2px
+  border-bottom: solid white 2px
+  height: 25%
+  width: 25%
+  margin: auto
+  transform: rotate(45deg)
+
+#nextArrow
+  border-left: solid white 2px
+  border-bottom: solid white 2px
+  height: 25%
+  width: 25%
+  margin: auto
+  transform: rotate(225deg)
