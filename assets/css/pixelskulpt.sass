@@ -26,7 +26,7 @@
     font-size: nth($h2, 2)
 
 // h3
-#bulletDIV p, #titleDIV *
+#bulletDIV p, #titleDIV *, #logoDIV *
   font-family: nth($h3, 5)
   font-size: nth($h3, 1)
   @media #{$portrait}
@@ -72,10 +72,28 @@ a:link, a:visited, a:active
   color: $bianco
   text-decoration: none
 
-
 a:hover
   transition: 0.4 s
 
+// --- Animations ---
+
+#carouselDIV
+  opacity: 0
+  transition: 5s
+
+#logoDIV, #titleDIV, #menuDIV, #socialDIV, #privacyDIV, #bulletDIV, #navDIV
+  opacity: 0
+  transition: 1600ms
+
+#callDIV
+  opacity: 0
+  transition: 2000ms
+
+.opacity1
+  opacity: 1!important
+
+.opacity0
+  opacity: 0
 
 // layout (margin, padding, width, height, color, background-color, ...)
 
@@ -90,20 +108,20 @@ html, body
   grid-template-columns: repeat(12, 1fr)
   grid-template-rows:  repeat(9, 1fr)
   grid-template-areas: "logo . . . . title title . . . . menu" ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . text text text text text text text text . social" ". . text text text text text text text text . social" ". . text text text text text text text text . social" "privacy . . . . call call . . . . ." "privacy . . . . . . . . . . ." "bullet bullet bullet . . . . . . . . ."
-  //height: 100%
-  //width: 100%
-
   height: calc(100vh - 40px)
   width: calc(100vw - 40px)
   padding: 20px
-  background: #6287de /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%) /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%,#150578 100%) /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #6287de 0%,#150578 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+  background: blue
+  //background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%) /* FF3.6-15 */
+  //background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%,#150578 100%) /* Chrome10-25,Safari5.1-6 */
+  //background: radial-gradient(ellipse at center, #6287de 0%,#150578 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
 
 #logoDIV
   grid-area: logo
+  p:nth-child(2)
+    margin-left: 16px
+    margin-top: -11px
 
 // Title section
 
@@ -164,6 +182,15 @@ html, body
   grid-area: call
   display: flex
   justify-content: center
+  .button
+    background-color: #007AFC
+    border-radius: 200px
+    height: 45px
+    width: auto
+    padding: 0px 45px
+    display: flex
+    justify-content: center
+    align-items: center
 
 // Privacy / language section
 

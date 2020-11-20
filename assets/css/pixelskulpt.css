@@ -52,26 +52,26 @@
   }
 }
 
-#bulletDIV p, #titleDIV * {
+#bulletDIV p, #titleDIV *, #logoDIV * {
   font-family: "Futura Std";
   font-size: 2vw;
   margin-top: 0;
 }
 
 @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
-  #bulletDIV p, #titleDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV * {
     font-size: 3vw;
   }
 }
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
-  #bulletDIV p, #titleDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV * {
     font-size: 2vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #bulletDIV p, #titleDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV * {
     font-size: 4vw;
   }
 }
@@ -87,7 +87,7 @@ h1, h2, h3, p {
 }
 
 .blu {
-  color: #150578 !important;
+  color: #007cba !important;
 }
 
 .blu2 {
@@ -95,7 +95,7 @@ h1, h2, h3, p {
 }
 
 .blu3 {
-  color: #6287DE !important;
+  color: #007AFC !important;
 }
 
 a:link, a:visited, a:active {
@@ -105,6 +105,29 @@ a:link, a:visited, a:active {
 
 a:hover {
   transition: 0.4 s;
+}
+
+#carouselDIV {
+  opacity: 0;
+  transition: 5s;
+}
+
+#logoDIV, #titleDIV, #menuDIV, #socialDIV, #privacyDIV, #bulletDIV, #navDIV {
+  opacity: 0;
+  transition: 1600ms;
+}
+
+#callDIV {
+  opacity: 0;
+  transition: 2000ms;
+}
+
+.opacity1 {
+  opacity: 1 !important;
+}
+
+.opacity0 {
+  opacity: 0;
 }
 
 html, body {
@@ -120,15 +143,16 @@ html, body {
   height: calc(100vh - 40px);
   width: calc(100vw - 40px);
   padding: 20px;
-  background: #6287de;
-  background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%);
-  background: radial-gradient(ellipse at center, #6287de 0%, #150578 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 );
+  background: blue;
 }
 
 #logoDIV {
   grid-area: logo;
+}
+
+#logoDIV p:nth-child(2) {
+  margin-left: 16px;
+  margin-top: -11px;
 }
 
 #titleDIV {
@@ -197,6 +221,17 @@ html, body {
   justify-content: center;
 }
 
+#callDIV .button {
+  background-color: #007AFC;
+  border-radius: 200px;
+  height: 45px;
+  width: auto;
+  padding: 0px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #privacyDIV {
   grid-area: privacy;
 }
@@ -231,7 +266,7 @@ html, body {
 }
 
 #bulletLine2 {
-  background-color: #6287DE;
+  background-color: #007AFC;
 }
 
 #bulletLine3 {
@@ -251,7 +286,7 @@ html, body {
   display: inline-flex;
   height: 100%;
   width: 50%;
-  background-color: #6287DE;
+  background-color: #007AFC;
 }
 
 #nextDIV {
