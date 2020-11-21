@@ -33,6 +33,10 @@ $(document).ready(function(){
     prevArrow: $('#prevDIV'),
     nextArrow: $('#nextDIV')
   });
+  $('#carouselDIV').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $("#carouselDIV").find('a').removeClass(".top1");
+    $("#carouselDIV").find('a').eq(nextSlide).addClass(".top2");
+});
 });
 
 $('a[data-slide]').click(function(e) {

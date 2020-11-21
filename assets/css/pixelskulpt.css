@@ -6,97 +6,97 @@
   font-style: normal;
 }
 
-#carouselDIV * {
+#carouselDIV *, h1 {
   font-family: "Futura Std";
   font-size: 3.8vw;
 }
 
 @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
-  #carouselDIV * {
+  #carouselDIV *, h1 {
     font-size: 3vw;
   }
 }
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
-  #carouselDIV * {
+  #carouselDIV *, h1 {
     font-size: 2vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #carouselDIV * {
+  #carouselDIV *, h1 {
     font-size: 4vw;
   }
 }
 
-#socialDIV *, #privacyDIV * {
+#socialDIV *, #privacyDIV *, h2 {
   font-family: "Futura Std";
   font-size: 1vw;
 }
 
 @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
-  #socialDIV *, #privacyDIV * {
+  #socialDIV *, #privacyDIV *, h2 {
     font-size: 3vw;
   }
 }
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
-  #socialDIV *, #privacyDIV * {
+  #socialDIV *, #privacyDIV *, h2 {
     font-size: 2vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #socialDIV *, #privacyDIV * {
+  #socialDIV *, #privacyDIV *, h2 {
     font-size: 4vw;
   }
 }
 
-#bulletDIV p, #titleDIV *, #logoDIV * {
+#bulletDIV p, #titleDIV *, #logoDIV *, h3 {
   font-family: "Futura Std";
   font-size: 2vw;
   margin-top: 0;
 }
 
 @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
-  #bulletDIV p, #titleDIV *, #logoDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV *, h3 {
     font-size: 3vw;
   }
 }
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
-  #bulletDIV p, #titleDIV *, #logoDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV *, h3 {
     font-size: 2vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #bulletDIV p, #titleDIV *, #logoDIV * {
+  #bulletDIV p, #titleDIV *, #logoDIV *, h3 {
     font-size: 4vw;
   }
 }
 
-#callDIV *, #menuDIV * {
+.button, #menuDIV *, h4 {
   font-family: "Futura Std";
-  font-size: 1.2vw;
+  font-size: 1.2vw !important;
   margin-top: 0;
 }
 
 @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
-  #callDIV *, #menuDIV * {
-    font-size: 3vw;
+  .button, #menuDIV *, h4 {
+    font-size: 3vw !important;
   }
 }
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
-  #callDIV *, #menuDIV * {
-    font-size: 2vw;
+  .button, #menuDIV *, h4 {
+    font-size: 2vw !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  #callDIV *, #menuDIV * {
-    font-size: 4vw;
+  .button, #menuDIV *, h4 {
+    font-size: 4vw !important;
   }
 }
 
@@ -158,6 +158,7 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   background: blue;
+  scroll-behavior: smooth;
 }
 
 .none {
@@ -246,34 +247,11 @@ html, body {
   text-align: center;
 }
 
-#socialDIV {
-  grid-area: social;
-  display: flex;
-  justify-content: flex-end;
+#carouselDIV span {
+  opacity: 0;
 }
 
-#socialDIV > div {
-  writing-mode: tb-rl;
-}
-
-#socialDIV p {
-  display: inline-block;
-  float: right;
-}
-
-.icon {
-  fill: white;
-  height: 8%;
-  margin-bottom: 16%;
-}
-
-#callDIV {
-  grid-area: call;
-  display: flex;
-  justify-content: center;
-}
-
-#callDIV .button {
+.button {
   background-color: transparent;
   border-radius: 200px;
   height: 45px;
@@ -283,11 +261,16 @@ html, body {
   align-items: center;
   display: inline-flex;
   border: #ffffff solid 2px;
+  transition: 1s ease;
+  margin-top: 30px;
 }
 
-#callDIV .slick-slide div div {
-  display: flex !important;
-  justify-content: center !important;
+.top1 a {
+  bottom: 0px;
+}
+
+.top2 a {
+  bottom: 50px !important;
 }
 
 .button:hover {
@@ -298,19 +281,6 @@ html, body {
 
 .button:focus {
   outline: none !important;
-}
-
-#privacyDIV {
-  grid-area: privacy;
-}
-
-#privacyDIV > * {
-  transform: rotate(180deg);
-  writing-mode: tb-rl;
-  display: inline-block;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 #bulletDIV {
@@ -348,11 +318,11 @@ html, body {
 }
 
 #navDIV {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
-  height: 8vw;
-  width: 16vw;
+  height: 7vw;
+  width: 14vw;
   display: flex;
 }
 
@@ -387,4 +357,66 @@ html, body {
   width: 25%;
   margin: auto;
   transform: rotate(225deg);
+}
+
+#portfolioDIV {
+  width: 100vw;
+  font-size: 0 !important;
+}
+
+.uno {
+  background-image: url("../Assets/img/aidemedia.jpg");
+  background-size: cover;
+}
+
+.due {
+  background-image: url("Assets/img/poggio.jpg");
+}
+
+.tre {
+  background-image: url("Assets/img/angolo.jpg");
+}
+
+.quattro {
+  background-image: url("Assets/img/silex.jpg");
+}
+
+.quadro {
+  position: relative;
+  width: 50vw;
+  height: 35vw;
+  display: inline-block;
+}
+
+.quadro img {
+  height: 35vw;
+  width: 50vw;
+}
+
+.overlay {
+  opacity: 0;
+  z-index: 999;
+  transition: 300ms;
+  height: 100%;
+  width: 100%;
+  background: blue;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.quadro:hover .overlay {
+  opacity: 0.7;
+}
+
+#footer {
+  background-color: #ffffff;
+  padding: 60px 0 50px;
+}
+
+#footer * {
+  color: blue;
+  text-align: center;
 }
