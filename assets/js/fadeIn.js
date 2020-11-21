@@ -3,8 +3,10 @@ $(document).ready(function(){
   setTimeout(function(){
     $("#logoDIV, #titleDIV, #menuDIV, #socialDIV, #privacyDIV, #bulletDIV, #navDIV")
       .addClass("opacity1")
-  }, 1500)
+  }, 0)
   setTimeout(function(){
     $("#callDIV").addClass("opacity1");
-  }, 2400);
+  }, 0);
 });
+
+//2800, 4500

@@ -15,7 +15,7 @@
     font-size: nth($h1, 2)
 
 // h2
-#socialDIV *, #privacyDIV *, #callDIV *
+#socialDIV *, #privacyDIV *
   font-family: nth($h2, 5)
   font-size: nth($h2, 1)
   @media #{$portrait}
@@ -35,6 +35,18 @@
     font-size: nth($h3, 3)
   @media #{$tablet}
     font-size: nth($h3, 2)
+  margin-top: 0
+
+// h4
+#callDIV *, #menuDIV *
+  font-family: nth($h4, 5)
+  font-size: nth($h4, 1)
+  @media #{$portrait}
+    font-size: nth($h4, 4)
+  @media #{$landscape}
+    font-size: nth($h4, 3)
+  @media #{$tablet}
+    font-size: nth($h4, 2)
   margin-top: 0
 
 // --- Typography colorz ---
@@ -79,15 +91,15 @@ a:hover
 
 #carouselDIV
   opacity: 0
-  transition: 5s
+  transition: 1.6s
 
 #logoDIV, #titleDIV, #menuDIV, #socialDIV, #privacyDIV, #bulletDIV, #navDIV
   opacity: 0
-  transition: 1600ms
+  transition: 4s
 
 #callDIV
   opacity: 0
-  transition: 2000ms
+  transition: 5s
 
 .opacity1
   opacity: 1!important
@@ -100,6 +112,14 @@ a:hover
 html, body
   margin: 0!important
   padding:0!important
+  background: blue
+
+
+.none
+  display: none!important
+
+.hide
+  visibility: hidden!important
 
 // --- --- Home --- ---
 
@@ -108,10 +128,9 @@ html, body
   grid-template-columns: repeat(12, 1fr)
   grid-template-rows:  repeat(9, 1fr)
   grid-template-areas: "logo . . . . title title . . . . menu" ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . text text text text text text text text . social" ". . text text text text text text text text . social" ". . text text text text text text text text . social" "privacy . . . . call call . . . . ." "privacy . . . . . . . . . . ." "bullet bullet bullet . . . . . . . . ."
-  height: calc(100vh - 40px)
+  height: calc(100vh - 45px)
   width: calc(100vw - 40px)
-  padding: 20px
-  background: blue
+  padding: 20px 20px 25px
   //background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%) /* FF3.6-15 */
   //background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%,#150578 100%) /* Chrome10-25,Safari5.1-6 */
   //background: radial-gradient(ellipse at center, #6287de 0%,#150578 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -120,8 +139,18 @@ html, body
 #logoDIV
   grid-area: logo
   p:nth-child(2)
-    margin-left: 16px
     margin-top: -11px
+  span
+    animation: glow 1.5s infinite
+
+@keyframes glow
+    0%
+      opacity: 0
+    50%
+      opacity: 1
+    100%
+      opacity: 0
+
 
 // Title section
 
@@ -129,11 +158,13 @@ html, body
   grid-area: title
   display: inline-flex
 
-#titleDIV *
-  margin: 0 auto auto
-  border-bottom: 2px solid
-
-// Menu section
+#titleDIV
+  *
+    margin: 0 auto auto
+    text-align: center
+  p
+    border-bottom: 2px solid white
+    display: inline-block
 
 #menuDIV
   grid-area: menu
@@ -183,14 +214,28 @@ html, body
   display: flex
   justify-content: center
   .button
-    background-color: #007AFC
+    background-color: transparent
     border-radius: 200px
     height: 45px
     width: auto
     padding: 0px 45px
-    display: flex
     justify-content: center
     align-items: center
+    display: inline-flex
+    border:  $bianco solid 2px
+  .slick-slide
+    div
+      div
+        display: flex!important
+        justify-content: center!important
+
+.button:hover
+  transition: 400ms!important
+  background-color: $bianco!important
+  color: $blu!important
+.button:focus
+  outline: none!important
+
 
 // Privacy / language section
 
@@ -213,7 +258,8 @@ html, body
   align-items: flex-end
 
 .bulletContainer
-  flex-grow: 1
+  display: inline-block
+  width: 32.5%
 
 .bulletLine
   height: 2px
@@ -222,12 +268,17 @@ html, body
 
 #bulletLine1
   background-color: $bianco
+  border-right: 4px solid $bianco
 
 #bulletLine2
-  background-color: $blu3
+  background-color: $bianco
+  border-right: 4px solid $bianco
+  opacity: 0.66
 
 #bulletLine3
-  background-color: $blu2
+  background-color: $bianco
+  border-right: 4px solid $bianco
+  opacity: 0.33
 
 // Arrow section
 
@@ -243,13 +294,14 @@ html, body
   display: inline-flex
   height: 100%
   width: 50%
-  background-color: $blu3
+  cursor: pointer
 
 #nextDIV
   display: inline-flex
   height: 100%
   width: 50%
-  background-color: $blu2
+  background-color: $bianco
+  cursor: pointer
 
 #prevArrow
   border-left: solid white 2px
@@ -260,9 +312,12 @@ html, body
   transform: rotate(45deg)
 
 #nextArrow
-  border-left: solid white 2px
-  border-bottom: solid white 2px
+  border-left: solid $blu 2px
+  border-bottom: solid $blu  2px
   height: 25%
   width: 25%
   margin: auto
   transform: rotate(225deg)
+
+
+// ----- CTA section -----

@@ -5,7 +5,11 @@
 <title>PixelSkulpt</title>
 
 <link href="assets/css/pixelskulpt.css" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/js/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="assets/js/slick/slick-theme.css">
 <script src="assets/js/fadeIn.js"></script>
 
 
@@ -15,24 +19,49 @@
 
   <div id="gridHome">
     <div id="logoDIV">
-    	<p>Pixel</p>
-			<p>Skulpt</p>
+    	<p>Pure</p>
+			<p><span>_</span>Kode</p>
     </div>
     <div id="titleDIV">      
-      <p>Hello</p>
+      <div>
+				<p>Hello</p>
+      </div>
+			<div>
+				<p>Skills</p>
+			</div>
+			<div>
+				<p>Contact</p>
+			</div>
 	</div>
     <div id="menuDIV">
-      <div id="burger">
+			<p>IT / EN</p>
+      <div id="burger" class="none">
         <div id="slice1"></div>
         <div id="slice2"></div>
       </div>
     </div>
     <div id="carouselDIV">
-      <h1>My name is Michele Paolino.<br> 
-		  I'm a Napoli based web designer<br> 
-		  and front-end developer.</h1>
+			<div>
+				<h1>My name is Michele Paolino.<br> 
+				I'm a Napoli based web designer<br> 
+				and front-end developer.
+				</h1>
+			</div>
+			<div>
+				<h1>Wordpress, typography, SASS,<br>
+					illustrator, jQuery, photography, plesk,<br>
+					photoshop, HTML5, bootstrap, UI / UX
+				</h1>
+			</div>
+			<div>
+				<h1>Feel free to mail me at<br>
+					info@purekode.agency
+				</h1>
+			</div>
+			
+			
 	</div>
-    <div id="socialDIV">
+    <div id="socialDIV" class="none">
       <div>
        	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="enable-background:new 0 0 430.1 430.1;" class="icon" x="0px" y="0px" viewBox="0 0 430.1 430.1" version="1.1">
 	<style type="text/css">
@@ -141,26 +170,62 @@
       </div>
 </div>
     <div id="callDIV">
-			<div class="button">
-				<a href="portfolio.html" title="portfolio" target="_self">Works</a>
+			<div >
+				<a href="#" class="button" title="works" target="_self" data-slide="2">My works</a>
+			</div>
+			<div class="hide">
+			</div>
+			<div class="hide">
 			</div>
 		</div>
-    <div id="privacyDIV">
+    <div id="privacyDIV" class="none">
       <div><a href="#">Privacy Policy</a><a href="#">IT / EN</a></div>
 </div>
     <div id="bulletDIV">
-      <div class="bulletContainer">
-        <p>01</p>
-        <div class="bulletLine" id="bulletLine1"></div>
-      </div>
-      <div class="bulletContainer">
-        <p>02</p>
-        <div class="bulletLine" id="bulletLine2"></div>
-      </div>
-      <div class="bulletContainer">
-        <p>03</p>
-        <div class="bulletLine" id="bulletLine3"></div>
-      </div>
+			<div class="">
+				<div class="bulletContainer">
+					<p>01</p>
+					<div class="bulletLine" id="bulletLine1"></div>
+				</div>
+				<div class="bulletContainer">
+					<p class="hide">02</p>
+					<div class="bulletLine" id="bulletLine2"></div>
+				</div>
+				<div class="bulletContainer">
+					<p class="hide">03</p>
+					<div class="bulletLine" id="bulletLine3"></div>
+				</div>
+			</div>
+			<div class="">
+				<div class="bulletContainer">
+					<p class="hide">01</p>
+					<div class="bulletLine" id="bulletLine2"></div>
+				</div>
+				<div class="bulletContainer">
+					<p>02</p>
+					<div class="bulletLine" id="bulletLine1"></div>
+				</div>
+				<div class="bulletContainer">
+					<p class="hide">03</p>
+					<div class="bulletLine" id="bulletLine3"></div>
+				</div>
+			</div>
+			<div class="">
+				<div class="bulletContainer">
+					<p class="hide">01</p>
+					<div class="bulletLine" id="bulletLine3"></div>
+				</div>
+				<div class="bulletContainer">
+					<p class="hide">02</p>
+					<div class="bulletLine" id="bulletLine2"></div>
+				</div>
+				<div class="bulletContainer">
+					<p>03</p>
+					<div class="bulletLine" id="bulletLine1"></div>
+				</div>
+			</div>
+			
+    
     </div>
     <div id="navDIV">
       <div id="prevDIV">
@@ -171,6 +236,8 @@
       </div> 
     </div>
   </div>
+	<script src="assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/carousel.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 <footer>
