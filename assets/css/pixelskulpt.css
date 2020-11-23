@@ -248,7 +248,7 @@ html, body {
 
 #navDIV {
   grid-area: nav;
-  border-top: solid #ffffff 2px;
+  border-top: solid rgba(255, 255, 255, 0.7) 2px;
   padding-top: 15px;
 }
 
