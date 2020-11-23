@@ -15,7 +15,7 @@
     font-size: nth($h1, 2)
 
 // h2
-#socialDIV *, #privacyDIV *, h2
+h2, #works a
   font-family: nth($h2, 5)
   font-size: nth($h2, 1)
   @media #{$portrait}
@@ -24,6 +24,7 @@
     font-size: nth($h2, 3)
   @media #{$tablet}
     font-size: nth($h2, 2)
+  letter-spacing: 2px
 
 // h3
 #bulletDIV p, #titleDIV *, #logoDIV *, h3
@@ -38,7 +39,7 @@
   margin-top: 0
 
 // h4
-.button , #menuDIV *, h4
+#menuDIV *, h4, #navDIV *
   font-family: nth($h4, 5)
   font-size: nth($h4, 1)!important
   @media #{$portrait}
@@ -48,34 +49,28 @@
   @media #{$tablet}
     font-size: nth($h4, 2)!important
   margin-top: 0
+  letter-spacing: 2px
 
 // --- Typography colorz ---
 
 // Main
 
-h1, h2, h3, p
+h1, h2, h3, p, a
   color: $bianco
   font-weight: normal
   margin: 0
+  @extend .bianco
 
-#div
-  h1, h2, h3, p
-    // color: $rosso
+a
+  cursor: pointer
 
 
 // <span> classes
 
 .bianco
   color: $bianco !important
-
-.blu
-  color: $blu1 !important
-
-.blu2
-  color: $blu2 !important
-
-.blu3
-  color: $blu3 !important
+  opacity: 0.7
+  transition: 0.3s
 
 
 // --- Links ---
@@ -86,6 +81,10 @@ a:link, a:visited, a:active
 
 a:hover
   transition: 0.4 s
+  opacity: 1
+
+a:focus
+  outline: none
 
 // --- Animations ---
 
@@ -112,7 +111,7 @@ a:hover
 html, body
   margin: 0!important
   padding:0!important
-  background: blue
+  background: $colore6
   scroll-behavior: smooth
 
 
@@ -128,14 +127,10 @@ html, body
   display: grid
   grid-template-columns: repeat(12, 1fr)
   grid-template-rows:  repeat(9, 1fr)
-  grid-template-areas: "logo . . . . title title . . . . menu" ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . text text text text text text text text . social" ". . text text text text text text text text . social" ". . text text text text text text text text . social" "privacy . . . . call call . . . . ." "privacy . . . . . . . . . . ." "bullet bullet bullet . . . . . . . . ."
+  grid-template-areas: "logo . . . . title title . . . . menu" ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . nav nav nav nav nav nav . . ."
   height: calc(100vh - 45px)
   width: calc(100vw - 40px)
   padding: 20px 20px 25px
-  //background: -moz-radial-gradient(center, ellipse cover, #6287de 0%, #150578 100%) /* FF3.6-15 */
-  //background: -webkit-radial-gradient(center, ellipse cover, #6287de 0%,#150578 100%) /* Chrome10-25,Safari5.1-6 */
-  //background: radial-gradient(ellipse at center, #6287de 0%,#150578 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6287de', endColorstr='#150578',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
 
 #logoDIV
   grid-area: logo
@@ -163,29 +158,13 @@ html, body
   *
     margin: 0 auto auto
     text-align: center
-  p
-    border-bottom: 2px solid white
-    display: inline-block
 
 #menuDIV
   grid-area: menu
   display: flex
   justify-content: flex-end
-
-#burger
-  width: 40%
-
-#slice1
-  height: 2px
-  background-color: white
-  width: 100%
-
-#slice2
-  height: 2px
-  background-color: white
-  width: 50%
-  margin-top: 10px
-  float: right
+  p
+    cursor: pointer
 
 #carouselDIV
   grid-area: text
@@ -193,152 +172,32 @@ html, body
   span
     opacity: 0
 
-.button
-    background-color: transparent
-    border-radius: 200px
-    height: 45px
-    width: auto
-    padding: 0px 45px
-    justify-content: center
-    align-items: center
-    display: inline-flex
-    border:  $bianco solid 2px
-    transition: 1s ease
-    margin-top: 30px
-
-.top1 a
-  bottom: 0px
-
-.top2 a
-  bottom: 50px!important
-
-.button:hover
-  transition: 400ms!important
-  background-color: $bianco!important
-  color: $blu!important
-.button:focus
-  outline: none!important
-
-
-// Bullet section
-
-#bulletDIV
-  grid-area: bullet
-  display: flex
-  align-items: flex-end
-
-.bulletContainer
-  display: inline-block
-  width: 32.5%
-
-.bulletLine
-  height: 2px
-  background-color: white
-  width: 100%
-
-#bulletLine1
-  background-color: $bianco
-  border-right: 4px solid $bianco
-
-#bulletLine2
-  background-color: $bianco
-  border-right: 4px solid $bianco
-  opacity: 0.66
-
-#bulletLine3
-  background-color: $bianco
-  border-right: 4px solid $bianco
-  opacity: 0.33
-
-// Arrow section
+#worksList
+  padding-top: 40px
+  a
+    margin-top: 15px
+    display: block
+  a:hover
+    margin-left: 10px
 
 #navDIV
-  position: absolute
-  bottom: 0
-  right: 0
-  height: 7vw
-  width: 14vw
-  display: flex
-
-#prevDIV
-  display: inline-flex
-  height: 100%
-  width: 50%
-  cursor: pointer
-
-#nextDIV
-  display: inline-flex
-  height: 100%
-  width: 50%
-  background-color: $bianco
-  cursor: pointer
-
-#prevArrow
-  border-left: solid white 2px
-  border-bottom: solid white 2px
-  height: 25%
-  width: 25%
-  margin: auto
-  transform: rotate(45deg)
-
-#nextArrow
-  border-left: solid $blu 2px
-  border-bottom: solid $blu  2px
-  height: 25%
-  width: 25%
-  margin: auto
-  transform: rotate(225deg)
+  grid-area: nav
+  border-top: solid $bianco 2px
+  padding-top: 15px
+  .nav > div
+    display: inline-flex!important
+    width: 32.6%
+  .nav > div:nth-child(1)
+    justify-content: flex-start!important
+  .nav > div:nth-child(2)
+    justify-content: center!important
+  .nav > div:nth-child(3)
+    justify-content: flex-end!important
+  a
+    display: inline-block
 
 
-// ----- Portfolio section ----- //
 
-#portfolioDIV
-  width: 100vw
-  font-size: 0!important
-
-.uno
-  background-image: url("../Assets/img/aidemedia.jpg")
-  background-size: cover
-
-.due
-  background-image: url('Assets/img/poggio.jpg')
-
-.tre
-  background-image: url('Assets/img/angolo.jpg')
-
-.quattro
-  background-image: url('Assets/img/silex.jpg')
-
-.quadro
-  position: relative
-  width: 50vw
-  height: 35vw
-  display: inline-block
-  img
-    height: 35vw
-    width: 50vw
-
-.overlay
-  opacity: 0
-  z-index: 999
-  transition: 300ms
-  height: 100%
-  width: 100%
-  background: blue
-  position: absolute
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-
-.quadro:hover .overlay
-  opacity: 0.7
-
-// ----- Portfolio section ----- //
-
-#footer
-  background-color: $bianco
-  padding: 60px 0 50px
-  *
-    color: $blu
-    text-align: center
+*
+  min-width: 0
+  min-height: 0

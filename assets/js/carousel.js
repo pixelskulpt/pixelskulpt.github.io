@@ -1,18 +1,10 @@
 $(document).ready(function(){
-  $('#bulletDIV').slick({
+  $('#navDIV').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    speed: 300,
-    asNavFor: '#carouselDIV'
-  });
-  $('#callDIV').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    speed: 300,
+    speed: 100,
     asNavFor: '#carouselDIV'
   });
   $('#titleDIV').slick({
@@ -20,7 +12,7 @@ $(document).ready(function(){
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    speed: 300,
+    speed: 100,
     asNavFor: '#carouselDIV'
   });
   $('#carouselDIV').slick({
@@ -28,8 +20,8 @@ $(document).ready(function(){
     slidesToScroll: 1,
     fade: true,
     dots: false,
-    asNavFor: '#titleDIV, #callDIV, #bulletDIV',
-    speed: 300,
+    asNavFor: '#titleDIV, #navDIV',
+    speed: 100,
     prevArrow: $('#prevDIV'),
     nextArrow: $('#nextDIV')
   });
