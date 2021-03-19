@@ -1,33 +1,38 @@
 @import font-face.sass
-@import variables.sass
+@import _variables.sass
 
 // --- --- Typography --- ---
 
 // Testo slider
-#carouselDIV *, h1
+h1
   font-family: nth($h1, 5)
   font-size: nth($h1, 1)
-  @media #{$portrait}
-    font-size: nth($h1, 4)
-  @media #{$landscape}
-    font-size: nth($h1, 3)
   @media #{$tablet}
     font-size: nth($h1, 2)
+  @media #{$landscape}
+    font-size: nth($h1, 3)
+  @media #{$portrait}
+    font-size: nth($h1, 4)
+
 
 // h2
-h2, #works a
+h2
   font-family: nth($h2, 5)
   font-size: nth($h2, 1)
+  line-height: 3.8vw
   @media #{$portrait}
     font-size: nth($h2, 4)
   @media #{$landscape}
     font-size: nth($h2, 3)
   @media #{$tablet}
     font-size: nth($h2, 2)
+    line-height: 6vw
   letter-spacing: 2px
 
+
+
 // h3
-#bulletDIV p, #titleDIV *, #logoDIV *, h3
+h3
   font-family: nth($h3, 5)
   font-size: nth($h3, 1)
   @media #{$portrait}
@@ -37,17 +42,31 @@ h2, #works a
   @media #{$tablet}
     font-size: nth($h3, 2)
   margin-top: 0
+  letter-spacing: 2px
 
 // h4
-#menuDIV *, h4, #navDIV *
+h4
   font-family: nth($h4, 5)
-  font-size: nth($h4, 1)!important
+  font-size: nth($h4, 1)
   @media #{$portrait}
-    font-size: nth($h4, 4)!important
+    font-size: nth($h4, 4)
   @media #{$landscape}
-    font-size: nth($h4, 3)!important
+    font-size: nth($h4, 3)
   @media #{$tablet}
-    font-size: nth($h4, 2)!important
+    font-size: nth($h4, 2)
+  margin-top: 0
+  letter-spacing: 2px
+
+// p
+p
+  font-family: nth($p, 5)
+  font-size: nth($p, 1)!important
+  @media #{$portrait}
+    font-size: nth($p, 4)!important
+  @media #{$landscape}
+    font-size: nth($p, 3)!important
+  @media #{$tablet}
+    font-size: nth($p, 2)!important
   margin-top: 0
   letter-spacing: 2px
 
@@ -55,7 +74,7 @@ h2, #works a
 
 // Main
 
-h1, h2, h3, p, a
+h1, h2, h3, h4, p, a
   color: $bianco
   font-weight: normal
   margin: 0
@@ -70,8 +89,7 @@ a
 .bianco
   color: $bianco !important
   opacity: 0.7
-  transition: 0.3s
-
+  transition: 0.2s
 
 // --- Links ---
 
@@ -85,6 +103,9 @@ a:hover
 
 a:focus
   outline: none
+
+.active *
+  opacity: 1!important
 
 // --- Animations ---
 
@@ -111,7 +132,7 @@ a:focus
 html, body
   margin: 0!important
   padding:0!important
-  background: $colore6
+  background: $colore7
   scroll-behavior: smooth
 
 
@@ -126,8 +147,14 @@ html, body
 #gridHome
   display: grid
   grid-template-columns: repeat(12, 1fr)
-  grid-template-rows:  repeat(9, 1fr)
-  grid-template-areas: "logo . . . . title title . . . . menu" ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . . nav nav nav nav nav nav . . ."
+  grid-template-rows: repeat(9, 1fr)
+  grid-template-areas: "logo . . . . title title . . . . menu" ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . . . . . . . . . . ." ". . . nav nav nav nav nav nav . . ."
+  @media #{$tablet}
+    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .'
+  @media #{$landscape}
+    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .'
+  @media #{$portrait}
+    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .'
   height: calc(100vh - 45px)
   width: calc(100vw - 40px)
   padding: 20px 20px 25px
@@ -171,22 +198,43 @@ html, body
   text-align: center
   span
     opacity: 0
-
-#worksList
-  padding-top: 40px
-  a
-    margin-top: 15px
-    display: block
-  a:hover
-    margin-left: 10px
+  .slick-list, .slick-track, [data-slick-index="1"]
+    height: 100%
+  [data-slick-index="1"]
+    overflow: scroll!important
+    -ms-overflow-style: none  /* IE and Edge */
+    scrollbar-width: none
+  *::-webkit-scrollbar
+    display: none!important
+  .slick-slide
+    display: flex
+    justify-content: center
+    align-items: center
+  [data-slick-index="1"], [data-slick-index="1"] *
+    // height: 100%!important
+  #worksList
+    div
+      height: auto
+    a
+      display: inline-block
+  #contact
+    h1
+      margin-bottom: 24px
 
 #navDIV
   grid-area: nav
-  border-top: solid rgba(255, 255, 255, 0.7) 2px
-  padding-top: 15px
+  display: flex
+  align-items: center
+  .nav
+    padding-top: 15px
+    transition: 1s
+    opacity: 1
+    width: 100%
+    display: flex!important
+    justify-content: space-between
   .nav > div
-    display: inline-flex!important
-    width: 32.6%
+    cursor: pointer
+    display: flex
   .nav > div:nth-child(1)
     justify-content: flex-start!important
   .nav > div:nth-child(2)
