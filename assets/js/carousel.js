@@ -1,12 +1,4 @@
 $(document).ready(function(){
-  $('#navDIV').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    speed: 100,
-    asNavFor: '#carouselDIV'
-  });
   $('#titleDIV').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -20,10 +12,10 @@ $(document).ready(function(){
     slidesToScroll: 1,
     fade: true,
     dots: false,
-    asNavFor: '#titleDIV, #navDIV',
+    asNavFor: '#titleDIV',
     speed: 100,
-    prevArrow: $('#prevDIV'),
-    nextArrow: $('#nextDIV')
+    arrows: false
+
   });
   $('#carouselDIV').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     $("#carouselDIV").find('a').removeClass(".top1");

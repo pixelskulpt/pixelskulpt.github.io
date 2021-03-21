@@ -332,12 +332,12 @@ html, body {
   opacity: 1;
   width: 100%;
   display: flex !important;
-  justify-content: space-between;
 }
 
 #navDIV .nav > div {
   cursor: pointer;
   display: flex;
+  width: 33.333%;
 }
 
 #navDIV .nav > div:nth-child(1) {
@@ -354,6 +354,21 @@ html, body {
 
 #navDIV a {
   display: inline-block;
+}
+
+#navDIV a:active, #navDIV a:hover, #navDIV a:visited, #navDIV a:focus {
+  opacity: 1;
+}
+
+.foto {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.1s;
+  background-image: url("../img/contact.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 * {

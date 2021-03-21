@@ -236,10 +236,10 @@ html, body
     opacity: 1
     width: 100%
     display: flex!important
-    justify-content: space-between
   .nav > div
     cursor: pointer
     display: flex
+    width: 33.333%
   .nav > div:nth-child(1)
     justify-content: flex-start!important
   .nav > div:nth-child(2)
@@ -248,8 +248,18 @@ html, body
     justify-content: flex-end!important
   a
     display: inline-block
+  a:active, a:hover, a:visited, a:focus
+    opacity: 1
 
-
+.foto
+  min-width: 100vw
+  min-height: 100vh
+  position: absolute
+  opacity: 0
+  transition: opacity 0.1s
+  background-image: url('../img/contact.jpg')!important
+  background-size: cover!important
+  background-position: center!important
 
 *
   min-width: 0
