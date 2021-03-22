@@ -7,12 +7,12 @@
 h1
   font-family: nth($h1, 5)
   font-size: nth($h1, 1)
-  @media #{$tablet}
-    font-size: nth($h1, 2)
-  @media #{$landscape}
-    font-size: nth($h1, 3)
-  @media #{$portrait}
-    font-size: nth($h1, 4)
+  @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait)
+    font-size: 5vw
+  @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape)
+    font-size: 7vw
+  @media (min-width: 1px) and (max-width: 479px) and (orientation: portrait)
+    font-size: 16vw
 
 
 // h2
@@ -55,8 +55,6 @@ h4
   @media #{$tablet}
     font-size: nth($h4, 2)
   margin-top: 0
-  letter-spacing: 2px
-  line-height: 1.9vw
 
 // p
 p
@@ -137,8 +135,23 @@ a:focus
 html, body
   margin: 0!important
   padding:0!important
-  background: $colore7
   scroll-behavior: smooth
+
+#background
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, $colore7, $colore5)
+	background-size: 400% 400%
+	animation: gradient 15s ease infinite
+
+@keyframes gradient
+	0%
+		background-position: 0% 50%
+
+	50%
+		background-position: 100% 50%
+
+	100%
+		background-position: 0% 50%
+
 
 
 .none
@@ -155,7 +168,7 @@ html, body
   grid-template-rows: repeat(9, 1fr)
   grid-template-areas: "logo . . . . title title . . . . menu" ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . text text text text text text text text . ." ". . . . . . . . . . . ." ". . . nav nav nav nav nav nav . . ."
   @media #{$tablet}
-    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .'
+    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' '. nav nav nav nav nav nav nav nav nav nav .'
   @media #{$landscape}
     grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .'
   @media #{$portrait}
@@ -166,18 +179,19 @@ html, body
 
 #logoDIV
   grid-area: logo
-  p:nth-child(2)
-    margin-top: -11px
-  span
-    animation: glow 1.5s infinite
+  h4
+    span
+      animation: glow 0.8s infinite alternate;
 
 @keyframes glow
-    0%
-      opacity: 0
-    50%
-      opacity: 1
-    100%
-      opacity: 0
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+
+.line-height
+  line-height: 1.35vw!important
 
 
 // Title section
@@ -250,16 +264,6 @@ html, body
     display: inline-block
   a:active, a:hover, a:visited, a:focus
     opacity: 1
-
-.foto
-  min-width: 100vw
-  min-height: 100vh
-  position: absolute
-  opacity: 0
-  transition: opacity 0.1s
-  background-image: url('../img/contact.jpg')!important
-  background-size: cover!important
-  background-position: center!important
 
 *
   min-width: 0

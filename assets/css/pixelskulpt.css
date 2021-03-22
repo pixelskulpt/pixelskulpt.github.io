@@ -11,7 +11,7 @@ h1 {
   font-size: 3.77vw;
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   h1 {
     font-size: 5vw;
   }
@@ -19,13 +19,13 @@ h1 {
 
 @media (min-width: 480px) and (max-width: 900px) and (orientation: landscape) {
   h1 {
-    font-size: 2vw;
+    font-size: 7vw;
   }
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) and (orientation: portrait) {
   h1 {
-    font-size: 13.5vw;
+    font-size: 16vw;
   }
 }
 
@@ -36,7 +36,7 @@ h2 {
   letter-spacing: 2px;
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) {
   h2 {
     font-size: 3vw;
   }
@@ -48,7 +48,7 @@ h2 {
   }
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   h2 {
     font-size: 3.8vw;
     line-height: 6vw;
@@ -62,7 +62,7 @@ h3 {
   letter-spacing: 2px;
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) {
   h3 {
     font-size: 3.7vw;
   }
@@ -74,7 +74,7 @@ h3 {
   }
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   h3 {
     font-size: 2.7vw;
   }
@@ -84,11 +84,9 @@ h4 {
   font-family: "Futura Std";
   font-size: 1.8vw;
   margin-top: 0;
-  letter-spacing: 2px;
-  line-height: 1.9vw;
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) {
   h4 {
     font-size: 3.5vw;
   }
@@ -100,7 +98,7 @@ h4 {
   }
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   h4 {
     font-size: 4vw;
   }
@@ -113,7 +111,7 @@ p {
   letter-spacing: 2px;
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) {
   p {
     font-size: 3.5vw !important;
   }
@@ -125,7 +123,7 @@ p {
   }
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   p {
     font-size: 3vw !important;
   }
@@ -195,8 +193,25 @@ a:focus {
 html, body {
   margin: 0 !important;
   padding: 0 !important;
-  background: #375d9d;
   scroll-behavior: smooth;
+}
+
+#background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #375d9d, #4ea685);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .none {
@@ -217,9 +232,9 @@ html, body {
   padding: 20px 20px 25px;
 }
 
-@media (min-width: 751px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   #gridHome {
-    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. text text text text text text text text text text .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .';
+    grid-template-areas: 'logo logo logo . title title title title . menu menu menu' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' 'text text text text text text text text text text text text' '. nav nav nav nav nav nav nav nav nav nav .';
   }
 }
 
@@ -229,7 +244,7 @@ html, body {
   }
 }
 
-@media (min-width: 1px) and (max-width: 750px) and (orientation: portrait) {
+@media (min-width: 1px) and (max-width: 479px) {
   #gridHome {
     grid-template-areas: 'logo logo logo . title title title title . menu menu menu' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . text text text text text text text text . .' '. . . . . . . . . . . .' '. nav nav nav nav nav nav nav nav nav nav .';
   }
@@ -239,24 +254,21 @@ html, body {
   grid-area: logo;
 }
 
-#logoDIV p:nth-child(2) {
-  margin-top: -11px;
-}
-
-#logoDIV span {
-  animation: glow 1.5s infinite;
+#logoDIV h4 span {
+  animation: glow 0.8s infinite alternate;
 }
 
 @keyframes glow {
   0% {
     opacity: 0;
   }
-  50% {
+  100% {
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-  }
+}
+
+.line-height {
+  line-height: 1.35vw !important;
 }
 
 #titleDIV {
@@ -358,17 +370,6 @@ html, body {
 
 #navDIV a:active, #navDIV a:hover, #navDIV a:visited, #navDIV a:focus {
   opacity: 1;
-}
-
-.foto {
-  min-width: 100vw;
-  min-height: 100vh;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.1s;
-  background-image: url("../img/contact.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
 }
 
 * {
